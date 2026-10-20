@@ -1882,7 +1882,7 @@ elif page == "ℹ️ About Project":
         {
             "name": "Om Walve",
             "phone": "+91 9834952864",
-            "email": "walveom98@gmail.com",
+            "email": "omwalve07@gmail.com",
             "photo_file": "om.png"   # मित्राच्या फोटोचे फाईल नाव
         }
     ]
