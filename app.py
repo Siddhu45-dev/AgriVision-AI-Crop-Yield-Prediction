@@ -227,12 +227,24 @@ if not DATA_PATH.exists():
     st.stop()
 
 if not MODEL_PATH.exists():
-    st.error("Trained model not found. Run: python train_model.py")
-    st.stop()
+    st.warning("Trained model not found. Training the model now...")
+
+    import subprocess
+    import sys
+
+    result = subprocess.run(
+        [sys.executable, "train_model.py"],
+        capture_output=True,
+        text=True
+    )
+
+    if result.returncode != 0:
+        st.error("Model training failed.")
+        st.code(result.stderr)
+        st.stop()
 
 df = load_data()
 model = load_model()
-
 if "prediction_history" not in st.session_state:
     st.session_state.prediction_history = []
 
