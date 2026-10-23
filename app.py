@@ -2127,7 +2127,7 @@ st.markdown("""
         Precision Agriculture • Machine Learning • Agro-Met Intelligence
     </div>
     <div class="footer-credit">
-        © 2026 Developed by Siddhesh & Om
+        © 2026 Developed by Siddhu & Team
     </div>
 </div>
 
