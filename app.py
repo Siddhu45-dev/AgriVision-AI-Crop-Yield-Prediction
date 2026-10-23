@@ -1901,13 +1901,13 @@ elif page == "ℹ️ About Project":
             "name": "Nikhil Surade",
             "phone": "+91 8055098379",
             "email": "nsurade30@gmail.com",
-            "photo_file": "nikhil.jpg"
+            "photo_file": ""
         },
         {
             "name": "Swayam Ambekar",
             "phone": "+91 8087672270",
             "email": " swayam6406@gmail.com",
-            "photo_file": "swayam.jpg"
+            "photo_file": "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-19/844773175_18075739499729722_7854801701781359805_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ig_cache_key=GDc3WjI6E_8PyjdAAL3Mz-_H3AFtbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=tQs0nKa5ItEQ7kNvwEs_rP9&_nc_oc=Adqou9AMoVFM7wsDKWmJZlvRzgRhJkRX--d8TTh5Bf_E2NJHmcSHs8L-0RoIEhgy6a5AeMJPvSNsfokzKmcNpC9i&_nc_zt=24&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=ur0eTk-TwGVfWPxVtKACSQ&_nc_ss=7b6a8&oh=00_AQP8Kkl6LD8SJWNHKe5UknUK_MvwgcmDoK_n5HT9OoNR9Q&oe=6AE1386C"
         }
     ]
 
