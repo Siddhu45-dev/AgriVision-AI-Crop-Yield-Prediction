@@ -1872,11 +1872,11 @@ elif page == "ℹ️ About Project":
         <div style="font-size: 42px;">🎓</div>
         <div>
             <div style="color: #48f5b5; font-size: 11px; font-weight: 700; text-transform: uppercase;">PROJECT MENTOR & GUIDE</div>
-            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof. / Dr. [Guide Name Here]</div>
-            <div style="color: #c2e8d4; font-size: 13px;">Department of Computer Engineering / Information Technology</div>
+            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof.A.L.Patil</div>
+            <div style="color: #c2e8d4; font-size: 13px;">Department of Information Technology</div>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True) 
 
     # 4. Project Development Team (एकूण ४ मेंबर्स - २x२ ग्रिडमध्ये)
     st.markdown('<div class="about-sec-heading">👥 Project Development Team</div>', unsafe_allow_html=True)
@@ -1901,13 +1901,13 @@ elif page == "ℹ️ About Project":
             "name": "Nikhil Surade",
             "phone": "+91 8055098379",
             "email": "nsurade30@gmail.com",
-            "photo_file": ""
+            "photo_file": "nikhil.jpg"
         },
         {
             "name": "Swayam Ambekar",
             "phone": "+91 8087672270",
             "email": " swayam6406@gmail.com",
-            "photo_file": "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.82787-19/844773175_18075739499729722_7854801701781359805_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ig_cache_key=GDc3WjI6E_8PyjdAAL3Mz-_H3AFtbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=tQs0nKa5ItEQ7kNvwEs_rP9&_nc_oc=Adqou9AMoVFM7wsDKWmJZlvRzgRhJkRX--d8TTh5Bf_E2NJHmcSHs8L-0RoIEhgy6a5AeMJPvSNsfokzKmcNpC9i&_nc_zt=24&_nc_ht=instagram.fpnq7-8.fna&_nc_gid=ur0eTk-TwGVfWPxVtKACSQ&_nc_ss=7b6a8&oh=00_AQP8Kkl6LD8SJWNHKe5UknUK_MvwgcmDoK_n5HT9OoNR9Q&oe=6AE1386C"
+            "photo_file": "swayam.jpg"
         }
     ]
 
