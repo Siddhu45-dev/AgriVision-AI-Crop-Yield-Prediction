@@ -1676,9 +1676,8 @@ elif page == "🗂️ Prediction History":
 
 elif page == "🌦️ Weather Intelligence":
     render_weather()
-
 # =========================================================
-# ABOUT PROJECT (Minimal 2 Members - Photo, Name, Contact)
+# ABOUT PROJECT (4 Team Members - Photo, Name, Contact)
 # =========================================================
 elif page == "ℹ️ About Project":
     import os
@@ -1689,7 +1688,6 @@ elif page == "ℹ️ About Project":
         if os.path.exists(image_path):
             with open(image_path, "rb") as img_file:
                 encoded = base64.b64encode(img_file.read()).decode()
-                # Extension check (png/jpg)
                 ext = image_path.split(".")[-1].lower()
                 mime = "image/png" if ext == "png" else "image/jpeg"
                 return f"data:{mime};base64,{encoded}"
@@ -1748,20 +1746,20 @@ elif page == "ℹ️ About Project":
         text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* Clean 2-Member Card */
+    /* Clean Team Card */
     .team-card-clean {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 22px;
-        padding: 24px;
+        padding: 22px;
         box-shadow: 0 8px 30px rgba(0,0,0,0.25);
         transition: transform 0.3s ease, border-color 0.3s ease;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 22px;
     }
     .team-card-clean:hover {
         transform: translateY(-4px);
@@ -1770,9 +1768,9 @@ elif page == "ℹ️ About Project":
     }
 
     .team-avatar-clean {
-        width: 110px;
-        height: 110px;
-        min-width: 110px;
+        width: 105px;
+        height: 105px;
+        min-width: 105px;
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #48f5b5;
@@ -1785,21 +1783,21 @@ elif page == "ℹ️ About Project":
 
     .team-name {
         color: #ffffff;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 800;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .team-contact-box {
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 12px;
-        padding: 10px 14px;
+        padding: 9px 12px;
         font-size: 13px;
         color: #e2f5ec;
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 5px;
     }
 
     /* Mentor Card */
@@ -1860,36 +1858,48 @@ elif page == "ℹ️ About Project":
         <div style="font-size: 42px;">🎓</div>
         <div>
             <div style="color: #48f5b5; font-size: 11px; font-weight: 700; text-transform: uppercase;">PROJECT MENTOR & GUIDE</div>
-            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof.A.L.Patil</div>
-            <div style="color: #c2e8d4; font-size: 13px;">Department of Information Technology</div>
+            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof. / Dr. [Guide Name Here]</div>
+            <div style="color: #c2e8d4; font-size: 13px;">Department of Computer Engineering / Information Technology</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # 4. Project Development Team (फक्त फोटो, नाव, फोन, ईमेल)
+    # 4. Project Development Team (एकूण ४ मेंबर्स - २x२ ग्रिडमध्ये)
     st.markdown('<div class="about-sec-heading">👥 Project Development Team</div>', unsafe_allow_html=True)
 
     # =========================================================================
-    # तुमच्या फोटोचे नाव आणि नंबर/ईमेल खाली बदला:
+    # येथे चौघांचे नाव, नंबर, ईमेल आणि फोटो फाईलचे नाव बदला:
     # =========================================================================
     team_members = [
         {
             "name": "Siddhesh Shelke",
             "phone": "+91 8432643404",
             "email": "siddhushelke45@gmail.com",
-            "photo_file": "exe.jpg"  # तुमच्या फोटोचे फाईल नाव
+            "photo_file": "exe.jpg"
         },
         {
-            "name": "Om Walve",
+            "name": "Teammate 2 Name",
             "phone": "+91 9834952864",
             "email": "omwalve07@gmail.com",
-            "photo_file": "om.png"   # मित्राच्या फोटोचे फाईल नाव
+            "photo_file": "om.png"
+        },
+        {
+            "name": "Nikhil Surade",
+            "phone": "+91 8055098379",
+            "email": "nsurade30@gmail.com",
+            "photo_file": "nikhil.jpg"
+        },
+        {
+            "name": "Swayam Ambekar",
+            "phone": "+91 8087672270",
+            "email": " swayam6406@gmail.com",
+            "photo_file": "swayam.jpg"
         }
     ]
 
-    col1, col2 = st.columns(2)
-
-    with col1:
+    # Row 1 (पहिले २ मेंबर्स)
+    row1_col1, row1_col2 = st.columns(2)
+    with row1_col1:
         m1 = team_members[0]
         img_src1 = get_image_base64(m1["photo_file"])
         st.markdown(f"""
@@ -1905,7 +1915,7 @@ elif page == "ℹ️ About Project":
         </div>
         """, unsafe_allow_html=True)
 
-    with col2:
+    with row1_col2:
         m2 = team_members[1]
         img_src2 = get_image_base64(m2["photo_file"])
         st.markdown(f"""
@@ -1916,6 +1926,40 @@ elif page == "ℹ️ About Project":
                 <div class="team-contact-box">
                     <div>📞 <b>Phone:</b> {m2['phone']}</div>
                     <div>✉️ <b>Email:</b> {m2['email']}</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Row 2 (पुढील २ मेंबर्स)
+    row2_col1, row2_col2 = st.columns(2)
+    with row2_col1:
+        m3 = team_members[2]
+        img_src3 = get_image_base64(m3["photo_file"])
+        st.markdown(f"""
+        <div class="team-card-clean">
+            <img src="{img_src3}" class="team-avatar-clean" alt="{m3['name']}">
+            <div class="team-info">
+                <div class="team-name">{m3['name']}</div>
+                <div class="team-contact-box">
+                    <div>📞 <b>Phone:</b> {m3['phone']}</div>
+                    <div>✉️ <b>Email:</b> {m3['email']}</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with row2_col2:
+        m4 = team_members[3]
+        img_src4 = get_image_base64(m4["photo_file"])
+        st.markdown(f"""
+        <div class="team-card-clean">
+            <img src="{img_src4}" class="team-avatar-clean" alt="{m4['name']}">
+            <div class="team-info">
+                <div class="team-name">{m4['name']}</div>
+                <div class="team-contact-box">
+                    <div>📞 <b>Phone:</b> {m4['phone']}</div>
+                    <div>✉️ <b>Email:</b> {m4['email']}</div>
                 </div>
             </div>
         </div>
@@ -1993,7 +2037,6 @@ elif page == "ℹ️ About Project":
 
     st.markdown("<div style='height: 25px;'></div>", unsafe_allow_html=True)
     st.caption("🌾 AgriVision AI • Engineering Capstone Project • Smart Agriculture Decision Support System")
-
 
 
 # =========================================================
