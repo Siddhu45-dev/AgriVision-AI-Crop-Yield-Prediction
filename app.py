@@ -1683,17 +1683,31 @@ elif page == "ℹ️ About Project":
     import os
     import base64
 
-    # तुमच्या कॉम्प्युटरमधील (File Explorer) फोटो लोड करणारे फंक्शन
-    def get_image_base64(image_path):
-        if os.path.exists(image_path):
-            with open(image_path, "rb") as img_file:
-                encoded = base64.b64encode(img_file.read()).decode()
-                ext = image_path.split(".")[-1].lower()
-                mime = "image/png" if ext == "png" else "image/jpeg"
-                return f"data:{mime};base64,{encoded}"
-        # जर फोटो सापडला नाही तर डीफॉल्ट सुंदर अवतार दिसेल:
-        return "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80"
+       # तुमच्या कॉम्प्युटरमधील (File Explorer) फोटो १००% शोधणारे अचूक फंक्शन
+    def get_image_base64(image_name):
+        try:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+        except NameError:
+            base_dir = os.getcwd()
 
+        possible_paths = [
+            os.path.join(base_dir, image_name),
+            os.path.join(os.getcwd(), image_name),
+            image_name,
+        ]
+
+        for path in possible_paths:
+            if os.path.exists(path) and os.path.isfile(path):
+                try:
+                    with open(path, "rb") as img_file:
+                        encoded = base64.b64encode(img_file.read()).decode()
+                        ext = path.split(".")[-1].lower()
+                        mime = "image/png" if ext == "png" else "image/jpeg"
+                        return f"data:{mime};base64,{encoded}"
+                except Exception:
+                    pass
+
+        return "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80"
     # 1. Glassmorphism CSS with Aerial Farm Background
     st.markdown("""
     <style>
@@ -1878,7 +1892,7 @@ elif page == "ℹ️ About Project":
             "photo_file": "exe.jpg"
         },
         {
-            "name": "Teammate 2 Name",
+            "name": "Om Walve",
             "phone": "+91 9834952864",
             "email": "omwalve07@gmail.com",
             "photo_file": "om.png"
