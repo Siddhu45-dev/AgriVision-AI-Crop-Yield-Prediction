@@ -1872,7 +1872,7 @@ elif page == "ℹ️ About Project":
         <div style="font-size: 42px;">🎓</div>
         <div>
             <div style="color: #48f5b5; font-size: 11px; font-weight: 700; text-transform: uppercase;">PROJECT MENTOR & GUIDE</div>
-            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof.A.L.Patil</div>
+            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof. S. K. Thakare</div>
             <div style="color: #c2e8d4; font-size: 13px;">Department of Information Technology</div>
         </div>
     </div>
