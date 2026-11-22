@@ -1677,13 +1677,13 @@ elif page == "🗂️ Prediction History":
 elif page == "🌦️ Weather Intelligence":
     render_weather()
 # =========================================================
-# ABOUT PROJECT (4 Team Members - Photo, Name, Contact)
+# ABOUT PROJECT (Solo Developer Profile)
 # =========================================================
 elif page == "ℹ️ About Project":
     import os
     import base64
 
-       # तुमच्या कॉम्प्युटरमधील (File Explorer) फोटो १००% शोधणारे अचूक फंक्शन
+    # फोटो लोड करणारे अचूक फंक्शन
     def get_image_base64(image_name):
         try:
             base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -1708,6 +1708,7 @@ elif page == "ℹ️ About Project":
                     pass
 
         return "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80"
+
     # 1. Glassmorphism CSS with Aerial Farm Background
     st.markdown("""
     <style>
@@ -1760,71 +1761,69 @@ elif page == "ℹ️ About Project":
         text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    /* Clean Team Card */
-    .team-card-clean {
+    /* Centered Developer Card */
+    .dev-card-centered {
         background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 22px;
-        padding: 22px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(72, 245, 181, 0.35);
+        border-radius: 24px;
+        padding: 26px 30px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.28);
         transition: transform 0.3s ease, border-color 0.3s ease;
-        margin-bottom: 18px;
+        margin: 10px auto 25px auto;
         display: flex;
         align-items: center;
-        gap: 22px;
+        gap: 28px;
+        max-width: 650px;
     }
-    .team-card-clean:hover {
+    .dev-card-centered:hover {
         transform: translateY(-4px);
-        border-color: rgba(72, 245, 181, 0.55);
-        box-shadow: 0 12px 35px rgba(72, 245, 181, 0.2);
+        border-color: rgba(72, 245, 181, 0.65);
+        box-shadow: 0 14px 40px rgba(72, 245, 181, 0.22);
     }
 
-    .team-avatar-clean {
-        width: 105px;
-        height: 105px;
-        min-width: 105px;
+    .dev-avatar {
+        width: 125px;
+        height: 125px;
+        min-width: 125px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid #48f5b5;
-        box-shadow: 0 0 18px rgba(72, 245, 181, 0.45);
+        border: 3.5px solid #48f5b5;
+        box-shadow: 0 0 22px rgba(72, 245, 181, 0.5);
     }
 
-    .team-info {
+    .dev-info {
         flex: 1;
     }
 
-    .team-name {
+    .dev-name {
         color: #ffffff;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 800;
-        margin-bottom: 8px;
+        letter-spacing: -0.3px;
+        margin-bottom: 4px;
     }
 
-    .team-contact-box {
+    .dev-tagline {
+        color: #48f5b5;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .dev-contact-box {
         background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 12px;
-        padding: 9px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        padding: 10px 16px;
         font-size: 13px;
         color: #e2f5ec;
         display: flex;
         flex-direction: column;
-        gap: 5px;
-    }
-
-    /* Mentor Card */
-    .guide-card {
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(7, 40, 30, 0.5));
-        backdrop-filter: blur(14px);
-        border: 1px solid rgba(72, 245, 181, 0.35);
-        border-radius: 18px;
-        padding: 20px 24px;
-        margin: 20px 0;
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        gap: 6px;
     }
 
     /* Tech Stack Badge */
@@ -1866,120 +1865,25 @@ elif page == "ℹ️ About Project":
     </div>
     """, unsafe_allow_html=True)
 
-    # 3. Project Guide / Mentor Section
-    st.markdown("""
-    <div class="guide-card">
-        <div style="font-size: 42px;">🎓</div>
-        <div>
-            <div style="color: #48f5b5; font-size: 11px; font-weight: 700; text-transform: uppercase;">PROJECT MENTOR & GUIDE</div>
-            <div style="color: #ffffff; font-size: 20px; font-weight: 800; margin: 2px 0;">Prof. S. K. Thakare</div>
-            <div style="color: #c2e8d4; font-size: 13px;">Department of Information Technology</div>
+    # 3. Developer Section (फक्त तुमचे नाव व कार्ड)
+    st.markdown('<div class="about-sec-heading">👨‍💻 Developer</div>', unsafe_allow_html=True)
+
+    dev_img = get_image_base64("exe.jpg")
+    st.markdown(f"""
+    <div class="dev-card-centered">
+        <img src="{dev_img}" class="dev-avatar" alt="Siddhesh Shelke">
+        <div class="dev-info">
+            <div class="dev-name">Siddhesh Shelke</div>
+            <div class="dev-tagline">Lead Developer & Machine Learning Architect</div>
+            <div class="dev-contact-box">
+                <div>📞 <b>Phone:</b> +91 8432643404</div>
+                <div>✉️ <b>Email:</b> siddhushelke45@gmail.com</div>
+            </div>
         </div>
     </div>
-    """, unsafe_allow_html=True) 
+    """, unsafe_allow_html=True)
 
-    # 4. Project Development Team (एकूण ४ मेंबर्स - २x२ ग्रिडमध्ये)
-    st.markdown('<div class="about-sec-heading">👥 Project Development Team</div>', unsafe_allow_html=True)
-
-    # =========================================================================
-    # येथे चौघांचे नाव, नंबर, ईमेल आणि फोटो फाईलचे नाव बदला:
-    # =========================================================================
-    team_members = [
-        {
-            "name": "Siddhesh Shelke",
-            "phone": "+91 8432643404",
-            "email": "siddhushelke45@gmail.com",
-            "photo_file": "exe.jpg"
-        },
-        {
-            "name": "Om Walve",
-            "phone": "+91 9834952864",
-            "email": "omwalve07@gmail.com",
-            "photo_file": "om.png"
-        },
-        {
-            "name": "Nikhil Surade",
-            "phone": "+91 8055098379",
-            "email": "nsurade30@gmail.com",
-            "photo_file": "nikhil.jpg"
-        },
-        {
-            "name": "Swayam Ambekar",
-            "phone": "+91 8087672270",
-            "email": " swayam6406@gmail.com",
-            "photo_file": "swayam.jpg"
-        }
-    ]
-
-    # Row 1 (पहिले २ मेंबर्स)
-    row1_col1, row1_col2 = st.columns(2)
-    with row1_col1:
-        m1 = team_members[0]
-        img_src1 = get_image_base64(m1["photo_file"])
-        st.markdown(f"""
-        <div class="team-card-clean">
-            <img src="{img_src1}" class="team-avatar-clean" alt="{m1['name']}">
-            <div class="team-info">
-                <div class="team-name">{m1['name']}</div>
-                <div class="team-contact-box">
-                    <div>📞 <b>Phone:</b> {m1['phone']}</div>
-                    <div>✉️ <b>Email:</b> {m1['email']}</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with row1_col2:
-        m2 = team_members[1]
-        img_src2 = get_image_base64(m2["photo_file"])
-        st.markdown(f"""
-        <div class="team-card-clean">
-            <img src="{img_src2}" class="team-avatar-clean" alt="{m2['name']}">
-            <div class="team-info">
-                <div class="team-name">{m2['name']}</div>
-                <div class="team-contact-box">
-                    <div>📞 <b>Phone:</b> {m2['phone']}</div>
-                    <div>✉️ <b>Email:</b> {m2['email']}</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Row 2 (पुढील २ मेंबर्स)
-    row2_col1, row2_col2 = st.columns(2)
-    with row2_col1:
-        m3 = team_members[2]
-        img_src3 = get_image_base64(m3["photo_file"])
-        st.markdown(f"""
-        <div class="team-card-clean">
-            <img src="{img_src3}" class="team-avatar-clean" alt="{m3['name']}">
-            <div class="team-info">
-                <div class="team-name">{m3['name']}</div>
-                <div class="team-contact-box">
-                    <div>📞 <b>Phone:</b> {m3['phone']}</div>
-                    <div>✉️ <b>Email:</b> {m3['email']}</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with row2_col2:
-        m4 = team_members[3]
-        img_src4 = get_image_base64(m4["photo_file"])
-        st.markdown(f"""
-        <div class="team-card-clean">
-            <img src="{img_src4}" class="team-avatar-clean" alt="{m4['name']}">
-            <div class="team-info">
-                <div class="team-name">{m4['name']}</div>
-                <div class="team-contact-box">
-                    <div>📞 <b>Phone:</b> {m4['phone']}</div>
-                    <div>✉️ <b>Email:</b> {m4['email']}</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # 5. Technology Stack & Tools
+    # 4. Technology Stack & Tools
     st.markdown('<div class="about-sec-heading">🛠️ Technology Stack & Architecture</div>', unsafe_allow_html=True)
 
     tech_c1, tech_c2 = st.columns(2)
@@ -2022,7 +1926,7 @@ elif page == "ℹ️ About Project":
         </div>
         """, unsafe_allow_html=True)
 
-    # 6. Model Parameters & Disclaimer
+    # 5. Model Parameters & Disclaimer
     st.markdown('<div class="about-sec-heading">📊 Scope & Model Parameters</div>', unsafe_allow_html=True)
 
     info_c1, info_c2 = st.columns(2)
@@ -2127,7 +2031,7 @@ st.markdown("""
         Precision Agriculture • Machine Learning • Agro-Met Intelligence
     </div>
     <div class="footer-credit">
-        © 2026 Developed by Siddhu & Team
+        © 2026 Developed by Siddhesh Shelke
     </div>
 </div>
 
