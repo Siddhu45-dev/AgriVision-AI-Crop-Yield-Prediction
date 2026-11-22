@@ -1874,7 +1874,7 @@ elif page == "ℹ️ About Project":
         <img src="{dev_img}" class="dev-avatar" alt="Siddhesh Shelke">
         <div class="dev-info">
             <div class="dev-name">Siddhesh Shelke</div>
-            <div class="dev-tagline">Lead Developer & Machine Learning Architect</div>
+            <div class="dev-tagline">AI & Machine Learning Engineer</div>
             <div class="dev-contact-box">
                 <div>📞 <b>Phone:</b> +91 8432643404</div>
                 <div>✉️ <b>Email:</b> siddhushelke45@gmail.com</div>
